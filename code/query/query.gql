@@ -1,0 +1,16 @@
+{
+  search(query: "language:Java, stars:>1, sort:stars-desc", type: REPOSITORY, first: 10) {
+    edges {
+      node {
+        ... on Repository {
+          name
+          createdAt
+          stargazerCount
+          releases {
+            totalCount
+          }
+        }
+      }
+    }
+  }
+}
