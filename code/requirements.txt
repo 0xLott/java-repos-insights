@@ -4,6 +4,7 @@ distlib==0.3.8
 filelock==3.16.0
 idna==3.8
 platformdirs==4.3.2
+python-dotenv==1.0.1
 PyYAML==6.0.2
 requests==2.32.3
 urllib3==2.2.2
