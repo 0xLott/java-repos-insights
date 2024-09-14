@@ -1,5 +1,5 @@
-{
-  search(query: "language:Java, stars:>1, sort:stars-desc", type: REPOSITORY, first: 10) {
+query($num_repos: Int!) {
+  search(query: "language:Java, stars:>1", type: REPOSITORY, first: $num_repos) {
     edges {
       node {
         ... on Repository {
@@ -10,9 +10,13 @@
           stargazerCount
           releases {
             totalCount
-          }         
+          }
         }
       }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
     }
   }
 }
