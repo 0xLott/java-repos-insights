@@ -4,11 +4,13 @@
       node {
         ... on Repository {
           name
+          url
+          sshUrl
           createdAt
           stargazerCount
           releases {
             totalCount
-          }
+          }         
         }
       }
     }
