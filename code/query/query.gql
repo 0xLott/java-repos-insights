@@ -1,13 +1,14 @@
-query($num_repos: Int!) {
-  search(query: "language:Java, stars:>1", type: REPOSITORY, first: $num_repos) {
+query ($num_repos: Int!, $cursor: String!) {
+  search(query: "language:Java, stars:>1, sort:stars-desc", type: REPOSITORY, first: $num_repos, after: $cursor) {
     edges {
       node {
         ... on Repository {
           name
+          stargazerCount
           url
           sshUrl
           createdAt
-          stargazerCount
+          updatedAt
           releases {
             totalCount
           }
@@ -17,6 +18,7 @@ query($num_repos: Int!) {
     pageInfo {
       endCursor
       hasNextPage
+      hasPreviousPage
     }
   }
 }

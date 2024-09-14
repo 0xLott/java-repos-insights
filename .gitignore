@@ -38,3 +38,5 @@ java/build/**
 
 # Cache
 **/__pycache__/*
+
+code/clones

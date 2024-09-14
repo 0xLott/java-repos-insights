@@ -14,7 +14,8 @@ headers = {
 # GitHub GraphQL API endpoint
 url = "https://api.github.com/graphql"
 
-def run_query(query, variables):
+
+def run_query(batch_size, query, variables):
     variables['cursor'] = ''
     total_repos = variables['num_repos']
     retrieved_data = []
@@ -22,7 +23,7 @@ def run_query(query, variables):
     def process_batch(batch_size):
         variables['num_repos'] = batch_size
         json = dispatch_request(query, variables).json()
-        
+
         # Extract the nodes from the response if it's inside a 'node' key
         nodes = json['data']['search']['edges']
         for node in nodes:
@@ -31,13 +32,13 @@ def run_query(query, variables):
         variables['cursor'] = json['data']['search']['pageInfo']['endCursor']
         return json
 
-    if total_repos > 100:
-        full_batches = total_repos // 100
-        remaining_items = total_repos % 100
+    if total_repos > batch_size:
+        full_batches = total_repos // batch_size
+        remaining_items = total_repos % batch_size
 
         for batch_number in range(full_batches):
             print(f'Page {batch_number + 1}')
-            process_batch(100)
+            process_batch(batch_size)
 
         if remaining_items > 0:
             print('Last Page:')
@@ -46,6 +47,7 @@ def run_query(query, variables):
         process_batch(total_repos)
 
     write_data(retrieved_data)
+
 
 def dispatch_request(query, variables):
     response = requests.post(
@@ -57,11 +59,14 @@ def dispatch_request(query, variables):
         headers=headers
     )
 
+    print("Query dispatched!")
+
     if response.status_code != 200:
         print(f"Error: {response.status_code} - {response.text}")
         return None
 
     return response
+
 
 def get_unique_filename(base_path):
     counter = 0
@@ -70,6 +75,7 @@ def get_unique_filename(base_path):
         if not os.path.exists(new_filename):
             return new_filename
         counter += 1
+
 
 def write_data(json):
     csv_file_path = get_unique_filename('query/results/results.csv')
