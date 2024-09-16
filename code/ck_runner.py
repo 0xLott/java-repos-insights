@@ -12,6 +12,8 @@ def run_ck():
         output_path = os.path.join(base_output_path, repo_name)
         output_path += '/'
 
+        os.makedirs(output_path, exist_ok=True)
+
         command = [
             'java', '-jar', ck_jar_path,
             repo_path, 'false', '0', 'true', output_path
