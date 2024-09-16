@@ -1,0 +1,1 @@
+java -jar "./ck/ck-0.7.1-SNAPSHOT-jar-with-dependencies.jar" ./clones/$repo/ false 0 true ./ck/output/
