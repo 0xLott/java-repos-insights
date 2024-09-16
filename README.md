@@ -21,8 +21,6 @@ A data-driven analysis of Java GitHub repositories, exploring correlations betwe
 *"Qual a relação entre o tamanho dos repositórios e as suas características de qualidade?"*  
 `size_vs_quality`: Correlation between the total lines of code (LOC) and lines of comments with quality metrics (CBO, DIT, LCOM) across repositories.
 
-
-
 ### Process Metrics
 
 | Metric           | Definition                                            | Summarization Method |
@@ -40,10 +38,7 @@ A data-driven analysis of Java GitHub repositories, exploring correlations betwe
 | **DIT: Depth Inheritance Tree** | Number of levels a class is from the root of the inheritance hierarchy | Maximum |
 | **LCOM: Lack of Cohesion of Methods** | Degree of method cohesion in a class, normalized between 0 and 1 | Mean |
 
-
-
 ---
-
 
 ## Getting started
 

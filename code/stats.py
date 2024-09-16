@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 import csv
 import math
 import ast
+import os
 import pandas as pd
 import numpy as np
 
@@ -68,15 +69,16 @@ def age_from_csv(data):
     return created_at_median
 
 
+
 def calculate_metrics():
     classes_data = pd.read_csv('ck/output/class.csv')
     methods_data = pd.read_csv('ck/output/method.csv')
-    repos_data = pd.read_csv('query/results/results-0.csv')
+    repos_data = pd.read_csv('query/results/results-0.csv')    
 
-    print("CBO:", cbo_from_csv(classes_data))
-    print("DIT:", dit_from_csv(classes_data))
-    print("LCOM*:", lcom_from_csv(classes_data))
-    print("# of releases:", releases_from_csv(repos_data))
-    print("LOC:", loc_from_csv(methods_data))
-    print("# of stars:", star_count_from_csv(repos_data))
-    print("Age (in days):", age_from_csv(repos_data))
+    # print("CBO:", cbo_from_csv(classes_data))
+    # print("DIT:", dit_from_csv(classes_data))
+    # print("LCOM*:", lcom_from_csv(classes_data))
+    # print("# of releases:", releases_from_csv(repos_data))
+    # print("LOC:", loc_from_csv(methods_data))
+    # print("# of stars:", star_count_from_csv(repos_data))
+    # print("Age (in days):", age_from_csv(repos_data))
