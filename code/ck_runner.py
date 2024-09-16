@@ -1,14 +1,15 @@
 import os
 import subprocess
 
-repo_path = './clones/'
+base_repo_path = './clones/'
 base_output_path = './ck/output/'
 ck_jar_path = './ck/ck-0.7.1-SNAPSHOT-jar-with-dependencies.jar'
 
 def run_ck():
     os.makedirs(base_output_path, exist_ok=True)
 
-    for repo_name in os.listdir(repo_path):
+    for repo_name in os.listdir(base_repo_path):
+        repo_path = os.path.join(base_repo_path, repo_name)
         output_path = os.path.join(base_output_path, repo_name)
         output_path += '/'
 
