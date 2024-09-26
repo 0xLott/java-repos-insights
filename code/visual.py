@@ -29,6 +29,7 @@ def plot_stars_vs_quality(CBO, DIT, LCOM, stars):
         axs[i].set_ylabel(metric)
 
     plt.tight_layout()
+    plt.savefig('./plots/stars_vs_quality.jpg')
     plt.show()
 
 
@@ -55,6 +56,7 @@ def plot_age_vs_quality(CBO, DIT, LCOM, ages):
         axs[i].set_ylabel(metric)
 
     plt.tight_layout()
+    plt.savefig('./plots/age_vs_quality.jpg')
     plt.show()
 
 
@@ -81,6 +83,7 @@ def plot_activity_vs_quality(CBO, DIT, LCOM, releases):
         axs[i].set_ylabel(metric)
 
     plt.tight_layout()
+    plt.savefig('./plots/activity_vs_quality.jpg')
     plt.show()
 
 
@@ -107,4 +110,5 @@ def plot_size_vs_quality(CBO, DIT, LCOM, LOC):
         axs[i].set_ylabel(metric)
 
     plt.tight_layout()
+    plt.savefig('./plots/size_vs_quality.jpg')
     plt.show()
