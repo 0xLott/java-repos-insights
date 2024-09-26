@@ -22,7 +22,10 @@ De forma preliminar, elaborou-se as seguintes hipóteses informais para posterio
 
 A coleta de dados foi realizada a partir da API do GitHub e implementada via GraphQL, buscando os 1.000 repositórios com maior número de estrelas. Para cálculo de métricas CK, utilizou-se a versão standalone da ferramenta de análise estática de código 'CK'[^1], elaborada pelo desenvolvedor [@mauricioaniche](https://www.github.com/mauricioaniche).
 
-[^1]: [mauricioaniche/ck GitHub Repository](https://github.com/mauricioaniche/ck)
+Para se obter a correlação entre diferentes métricas, utilizou-se o Coeficiente de Correlação de Pearson, implementado a pela biblioteca _pearsonr_[^2]. A visualização de dados foi obtida a partir das bibliotecas _seaborn_ e _matplotlib_
+
+[^1]: [mauricioaniche/ck GitHub Repository](https://github.com/mauricioaniche/ck).
+[^2]: [Scipy's personr](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html)
 
 As seguintes métricas foram utilizadas para cada pergunta de pesquisa:
 
