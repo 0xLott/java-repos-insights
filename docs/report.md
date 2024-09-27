@@ -81,20 +81,24 @@ Ao comparar as hipóteses formuladas com os resultados encontrados através da c
 
 ### 5.1. Popularidade e Qualidade (RQ-01)
 
-lorem ipsum dolor amet consectetur adipiscing elit
-![Plotagem de dados referentes à RQ_01](../code/plots/stars_vs_quality.jpg)
+Ao se analisar a correlação entre popularidade com as métricas CK, a distribuição de maior destaque foi a que analisa DIT e número de estrelas dos repositórios. No geral, as instâncias se concentram em proximidade ao eixo inferior, indicando a DIT pouco afeta a popularidade de repositórios. No entanto, a tendência é que outliers de maior DIT possuam menor número de estrelas.
+
+Ademais, não foi possível verificar relação direta entre CBO e Popularidade, uma vez que a distribuição dos repositórios não indica concentrações notáveis.
+![Plotagem de dados referentes à RQ_01](../code/plots/stars_vs_quality.jpeg)
 
 ### 5.2. Maturidade e Qualidade (RQ-02)
 
-lorem ipsum dolor amet consectetur adipiscing elit
-![Plotagem de dados referentes à RQ_02](../code/plots/age_vs_quality.jpg)
+Quanto à correlação entre maturidade e qualidade, é relevante analisar os outliers na relação entre DIT e idade do repositório. Dessa maneira, dos repositórios que apresentaram valores contrastantemente superiores de DIT, grande parte possui entre 10 a 13 anos de idade.
+
+Ademais, também é notável a constância entre maturidade do repositório e LCOM, indicando que há pouco desvios no que se refere a essa correlação.
+![Plotagem de dados referentes à RQ_02](../code/plots/age_vs_quality.jpeg)
 
 ### 5.3. Atividade e Qualidade (RQ-03)
 
-lorem ipsum dolor amet consectetur adipiscing elit
-![Plotagem de dados referentes à RQ_03](../code/plots/activity_vs_quality.jpg)
+De forma geral, pode se atestar que os valores de LCOM se mantêm constantes em relação à atividade do repositório, seguindo o mesmo padrão das demais métricas.
+![Plotagem de dados referentes à RQ_03](../code/plots/activity_vs_quality.jpeg)
 
 ### 5.4. Tamanho e Qualidade (RQ-04)
 
-lorem ipsum dolor amet consectetur adipiscing elit
-![Plotagem de dados referentes à RQ_04](../code/plots/size_vs_quality.jpg)
+A correlação entre tamanho e qualidade também apresentou distribuições semelhantes às demais análises. No entanto, é possível perceber alguns outliers no que se refere à DIT vs tamanho do código, um deles sendo um repositório que possui valores aberrantes tanto de DIT quanto de linhas de código.  
+![Plotagem de dados referentes à RQ_04](../code/plots/size_vs_quality.jpeg)
